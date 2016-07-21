@@ -11,6 +11,7 @@
 #'   \item {Removes ASCII control characters (001-031 and 177)}
 #'   \item {Trims runs of spaces and spaces which begin/end a string}
 #'   \item {Converts special addressing characters, such as ordinals}
+#'   \item {Removes single/double quotes and asterisks}
 #'   \item {Strips latin1 characters}
 #'   \item {Removes leading, trailing, and repeated commas}
 #'   \item {Removes various permutations of the "c/o" flag}
@@ -73,6 +74,11 @@ address_cleaner <- function(address, verbose = TRUE){
 	# Remove remaining non-ASCII characters and replace with " "
 	if (verbose) cat("\t* Removing all remaining non-ASCII characters\n")
 	address <- vapply(address, function(x) iconv(x, 'ASCII', sub = " "),
+					  character(1), USE.NAMES = FALSE)
+
+	# Remove single/double quotes and asterisks
+	if (verbose) cat("\t* Remove single/double quotes and asterisks\n")
+	address <- vapply(address, function(x) gsub("\\*|\"|\'", "", x),
 					  character(1), USE.NAMES = FALSE)
 
 	# Remove leading, trailing, and repeated commas

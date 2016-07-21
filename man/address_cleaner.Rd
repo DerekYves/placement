@@ -28,6 +28,7 @@ Specifically, address_cleaner:
   \item {Removes ASCII control characters (001-031 and 177)}
   \item {Trims runs of spaces and spaces which begin/end a string}
   \item {Converts special addressing characters, such as ordinals}
+  \item {Removes single/double quotes and asterisks}
   \item {Strips latin1 characters}
   \item {Removes leading, trailing, and repeated commas}
   \item {Removes various permutations of the "c/o" flag}
