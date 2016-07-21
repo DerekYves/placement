@@ -1,0 +1,29 @@
+Package: placement
+Type: Package
+Title: Tools for accessing the Google Maps API
+Version: 0.1.0
+Author: Derek Darves
+Maintainer: Derek Darves <darves@gmail.com>
+Description: The main functions in this package are \code{\link{drive_time}}
+	(used for calculating distances between physical addresses) and
+	\code{\link{geocode_url}} (used for estimating lat/long coordinates
+	of a physical address). At the time this package was authored, there were no
+	readily available packages which generated the cryptogric signatures necessary for
+	making API calls with a (paid) Google for Work account within the geocoding process itself
+	(hence the motivation for it's authorship). These paid accounts have much large quota limits than
+	the "standard_api" and, thus, placement may be useful for indivuals who
+	would prefer to submit large batch jobs to the Google Maps API from within R.
+	While the main benefit of this package is it's ability to generate properly signed
+	URLs with the \code{\link{digest::hmac}} sha1 algorithm, it also provides methods
+	for accessing the standard API using a (free) Google API key
+	(see \href{https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key}{this page} to obtain a key).
+License: GPL-3
+LazyData: TRUE
+Imports:
+    RCurl,
+    jsonlite,
+    base64enc,
+    digest,
+    urltools,
+    stringi
+RoxygenNote: 5.0.1
