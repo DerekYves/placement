@@ -76,8 +76,8 @@
 #'   }
 
 #' @examples
-#' # Bike from the White House to Google!
-#' address <- c("1600 Pennsylvania Ave NW, Washington, DC 20500, USA",
+#' # Bike from the NYC to Google!
+#' address <- c("350 5th Ave, New York, NY 10118, USA",
 #' 			 "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA")
 #'
 #' coordset <- geocode_url(address, auth="standard_api", privkey="",
@@ -95,14 +95,14 @@
 #'
 #' # Get the distance in kilometers using physical addresses instead of lat/lng:
 #' howfar_kms <- drive_time(
-#'      address="1600 Pennsylvania Ave NW, Washington, DC 20500, USA",
+#'      address="350 5th Ave, New York, NY 10118, USA",
 #' 		dest="1600 Amphitheatre Pkwy, Mountain View, CA 94043",
 #' 		auth="standard_api", privkey="", clean=FALSE,
 #' 		add_date='today', verbose=FALSE, travel_mode="bicycling",
-#' 		units="metric"
+#' 		units="imperial"
 #' 		)
 #'
-#' with(howfar_kms, cat("Travelling from the White House to ", destination,
+#' with(howfar_kms, cat("Cycling from NYC to ", destination,
 #' 					 ":\n", dist_txt, "\n", time_txt, sep=""))
 
 

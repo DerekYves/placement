@@ -72,8 +72,8 @@ For smaller batch requests, it is also possible to access Google's "standard API
 using this function (see \href{https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key}{this page} to obtain a free API key).
 }
 \examples{
-# Get coordinates for the White House and Google
-address <- c("1600 Pennsylvania Ave NW, Washington, DC 20500, USA",
+# Get coordinates for the Empire State Building and Google
+address <- c("350 5th Ave, New York, NY 10118, USA",
 			 "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA")
 
 coordset <- geocode_url(address, auth="standard_api", privkey="",

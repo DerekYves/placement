@@ -53,8 +53,8 @@
 #'   }
 
 #' @examples
-#' # Get coordinates for the White House and Google
-#' address <- c("1600 Pennsylvania Ave NW, Washington, DC 20500, USA",
+#' # Get coordinates for the Empire State Building and Google
+#' address <- c("350 5th Ave, New York, NY 10118, USA",
 #' 			 "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA")
 #'
 #' coordset <- geocode_url(address, auth="standard_api", privkey="",
