@@ -67,12 +67,13 @@ google_encode64 <- function(address, dest=NULL, gmode="geocode", privkey=NULL,
 			stop("Address must be singular or the same length as destination!")
 	}
 
+	# Encode the URLs
 	if(urlencode){
-		# Encode the URLs
 		address  <- urltools::url_encode(address)
+		if(!is.null(dest)){
 		dest     <- urltools::url_encode(dest)
+		}
 	}
-
 
 	# Build the data.frame for encoding
 	if(gmode == "geocode") {

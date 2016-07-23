@@ -17,7 +17,7 @@ Description: The main functions in this package are \code{\link{drive_time}}
 	URLs with the \code{\link{digest::hmac}} sha1 algorithm, it also provides methods
 	for accessing the standard API using a (free) Google API key
 	(see \href{https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key}{this page} to obtain a key).
-License: GPL-3
+License: GPL-3 + file LICENSE
 LazyData: TRUE
 Imports:
     RCurl,

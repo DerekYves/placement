@@ -34,8 +34,15 @@ Specifically, address_cleaner:
   \item {Removes various permutations of the "c/o" flag}
   }
 
-Note: We recommend reviewing the output of this function against the original vector to ensure the
-  transformations it performs resolve the formatting issues (if any) found in your source data.
+Note: Hypthenated addresses and zipcodes can cause issues with the Maps API. Therefore, prior to
+applying this function and attempting to geocode a location, we recommend:
+\itemize{
+  \item {Deleting the second half of a compound US postal code, e.g. \code{gsub("(?<=\\d)-.*", "", "12345-1234", perl=TRUE)}}
+  \item {Replacing hypthenated street numbers with a space followed by a pound, e.g. \code{gsub("(?<=\\d)-(?=\\d)", " #", "1234-3332 West 100th", perl=T)}.}
+  }
+  Both of these transformations, of course, presuppose that your postal code and street numbers exist in separate columns.
+  Similarly, you may want to recode any "CA" country code fields to "Canada" to avoid inaccurate
+  geocoding within California state (this is more more likely to occur when a Canadian address has non-standard features, such as 'c/o' or 'attn' fields, etc.).
 }
 \examples{
 # Define an incompatible vector of addresses
