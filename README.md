@@ -12,7 +12,7 @@ The main functions in this package are `drive_time`
 
 This package is available on Cran and can be installed within R:
 
-install.packages("placement")
+`install.packages("placement")`
 
 To install the development version of this package:
 
