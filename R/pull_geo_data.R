@@ -4,15 +4,14 @@
 #' It attempts to pull Google Maps data for a complete URL, recording http errors/connection failures
 #' within the \code{status} and \code{error_message} paramaters.
 
-#' To debug invalid signature requests, see this \href{https://developers.google.com/maps/documentation/business/webservices/auth"}{Google Developer documention}.
+#' To debug invalid signature requests, refer to the \href{https://developers.google.com/maps/documentation/business/webservices/auth}{Google Developer documention}.
 
-#' @param urls_out character string; a complete URL valid character encoding.
+#' @param urls_out character string; a complete URL with valid character encoding.
 #' @param tmout number; the length of time, in seconds, to wait for a valid server
 #' response before triggering a connection timeout error (defaults to 10 seconds).
 #' @param messages logical; when \code{TRUE}, displays message from the API call(s). Generally,
 #' this parameter is passed from \code{\link{drive_time}} or \code{\link{geocode_url}}.
-#' manually.
-
+#'
 #' @importFrom RCurl getURL
 #' @importFrom jsonlite fromJSON
 #' @return A list with validly formatted JSON objects whose length equals \code{urls_out}
@@ -57,7 +56,7 @@ pull_geo_data <- function(urls_out, tmout=10, messages=TRUE){
 	fromgoogle <- lapply(.urlset, mapsin)
 
 	# Invalid signatures do not trigger an http error from the API; additionally,
-	# these returns are not transmitted as a valid JSON object. The following
+	# these returns are not transmitted in JSON format The following
 	# transformations convert signature errors into a JSON object with status
 	# and error_message fields.
 

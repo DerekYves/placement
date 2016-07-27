@@ -32,8 +32,8 @@
 #' @return address_cleaner returns a character vector of addresses of the same length as the input.
 #' @examples
 #' # Define an incompatible vector of addresses
-#' address <- c(" 1600 Pennsylvania Ave. ½, Washington, DC 20500, USA ",
-#' 			 "  ª1600  Amphitheatre Pkwy, Mountain View, CA 94043, USA")
+#' address <- c(" 350 Fifth Ave \u00bd, New York, NY 10118, USA ",
+#' 			 "  \u00ba 1600  Amphitheatre Pkwy, Mountain View, CA 94043, USA")
 #'
 #' # View the return:
 #' address_cleaner(address)
@@ -72,9 +72,9 @@ address_cleaner <- function(address, verbose = TRUE){
 	# Convert special addressing charecters
 	if (verbose) cat("\t* Converting special address markers\n")
 	address <- vapply(address, function(x)
-		gsub("½", "1/2", fixed = T,
-			 gsub("ª", "a", fixed = T,
-			 	 gsub("º", "o", x, fixed = T))),
+		gsub("\u00bd", "1/2", fixed = T,
+			 gsub("\u00aa", "a", fixed = T,
+			 	 gsub("\u00ba", "o", x, fixed = T))),
 		character(1), USE.NAMES = FALSE)
 
 	# Remove remaining non-ASCII characters and replace with " "

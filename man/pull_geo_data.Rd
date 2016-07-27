@@ -7,14 +7,13 @@
 pull_geo_data(urls_out, tmout = 10, messages = TRUE)
 }
 \arguments{
-\item{urls_out}{character string; a complete URL valid character encoding.}
+\item{urls_out}{character string; a complete URL with valid character encoding.}
 
 \item{tmout}{number; the length of time, in seconds, to wait for a valid server
 response before triggering a connection timeout error (defaults to 10 seconds).}
 
 \item{messages}{logical; when \code{TRUE}, displays message from the API call(s). Generally,
-this parameter is passed from \code{\link{drive_time}} or \code{\link{geocode_url}}.
-manually.}
+this parameter is passed from \code{\link{drive_time}} or \code{\link{geocode_url}}.}
 }
 \value{
 A list with validly formatted JSON objects whose length equals \code{urls_out}
@@ -23,7 +22,7 @@ A list with validly formatted JSON objects whose length equals \code{urls_out}
 This function, primarily, is a helper for \code{\link{drive_time}} and \code{\link{geocode_url}}.
 It attempts to pull Google Maps data for a complete URL, recording http errors/connection failures
 within the \code{status} and \code{error_message} paramaters.
-To debug invalid signature requests, see this \href{https://developers.google.com/maps/documentation/business/webservices/auth"}{Google Developer documention}.
+To debug invalid signature requests, refer to the \href{https://developers.google.com/maps/documentation/business/webservices/auth}{Google Developer documention}.
 }
 \examples{
 \dontrun{

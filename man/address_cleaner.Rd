@@ -46,8 +46,8 @@ applying this function and attempting to geocode a location, we recommend:
 }
 \examples{
 # Define an incompatible vector of addresses
-address <- c(" 1600 Pennsylvania Ave. ½, Washington, DC 20500, USA ",
-			 "  ª1600  Amphitheatre Pkwy, Mountain View, CA 94043, USA")
+address <- c(" 350 Fifth Ave \\u00bd, New York, NY 10118, USA ",
+			 "  \\u00ba 1600  Amphitheatre Pkwy, Mountain View, CA 94043, USA")
 
 # View the return:
 address_cleaner(address)

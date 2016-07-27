@@ -20,7 +20,7 @@
 #'        from the input that are incompatible with the Google Maps API using the \code{\link{address_cleaner}} function.
 #' @param auth character string; one of: "work" (the default), or "standard_api".
 #'        While you may specify an empty string for privkey when using the standard API, for some direction types (e.g., transit) a (free) API key from Google is required (see \href{https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key}{this page}).
-#'        Authentication via the "work" method requires the private API key associated with your (paid) \href{https://www.google.com/work/}{Google for Work} account.
+#'        Authentication via the "work" method requires the client ID and private API key associated with your (paid) \href{https://www.google.com/work/}{Google for Work/Premium} account.
 #' @param privkey character string; your Google API key (whether of the "work" or "standard_api" variety).
 #' @param clientid character string; your Google for Work client id (generally of the form 'gme-[company]')
 #'        This parameter should not be set when authenticating through the standard API.

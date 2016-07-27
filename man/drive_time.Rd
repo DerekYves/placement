@@ -26,7 +26,7 @@ from the input that are incompatible with the Google Maps API using the \code{\l
 
 \item{auth}{character string; one of: "work" (the default), or "standard_api".
 While you may specify an empty string for privkey when using the standard API, for some direction types (e.g., transit) a (free) API key from Google is required (see \href{https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key}{this page}).
-Authentication via the "work" method requires the private API key associated with your (paid) \href{https://www.google.com/work/}{Google for Work} account.}
+Authentication via the "work" method requires the client ID and private API key associated with your (paid) \href{https://www.google.com/work/}{Google for Work/Premium} account.}
 
 \item{privkey}{character string; your Google API key (whether of the "work" or "standard_api" variety).}
 
@@ -123,7 +123,7 @@ howfar_kms <- drive_time(
 		dest="1600 Amphitheatre Pkwy, Mountain View, CA 94043",
 		auth="standard_api", privkey="", clean=FALSE,
 		add_date='today', verbose=FALSE, travel_mode="bicycling",
-		units="metric"
+		units="imperial"
 		)
 
 with(howfar_kms, cat("Cycling from NYC to ", destination,
