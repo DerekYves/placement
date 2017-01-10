@@ -1,7 +1,7 @@
 Package: placement
 Type: Package
 Title: Tools for Accessing the Google Maps API
-Version: 0.1.1
+Version: 0.1.2
 Author: Derek Darves
 Maintainer: Derek Darves <darves@gmail.com>
 Description: The main functions in this package are drive_time
@@ -21,7 +21,8 @@ Imports:
     base64enc,
     digest,
     urltools,
-    stringi
+    stringi,
+    triebeard
 URL: https://github.com/derekyves/placement
 BugReports: https://github.com/derekyves/placement/issues
 RoxygenNote: 5.0.1
