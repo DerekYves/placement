@@ -187,7 +187,15 @@ drive_time <- function(address, dest, auth="standard_api", privkey=NULL,
 
 
 	json <- placement::pull_geo_data(togoogle, tmout=10, messages=messages)
-
+	
+	#raise error if response is denied
+	if (json[[1]]$status == 'REQUEST_DENIED') {
+        	stop(paste0(
+          		"Request sent to Google, but response returned REQUEST_DENIED.  Error details:\n", 
+          		json[[1]]$error_message
+        	))
+	}
+		
 	coord <- t(vapply(json, function(x) {
 		if(!is.null(x$status)){
 			if(x$status=="OK"){
